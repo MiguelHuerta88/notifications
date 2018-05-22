@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'api'], function(){
+    Route::post('create', function(){
+        dd('here');
+    });
+
+    Route::post('update', function(){
+        dd('here');
+    });
+});

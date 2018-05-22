@@ -90,7 +90,7 @@ server:
         - bash-completion
         - htop
         - vim
-        - php5.6-xml
+        - php7.0-xml
 users_groups:
     install: '1'
     groups: {  }
@@ -251,7 +251,7 @@ letsencrypt:
 php:
     install: '1'
     settings:
-        version: '5.6'
+        version: '7.0'
     modules:
         php:
             - cli
