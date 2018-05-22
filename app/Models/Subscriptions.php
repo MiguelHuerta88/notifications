@@ -11,5 +11,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Subscriptions extends Model
 {
-
+    /**
+     * Table to use
+     *
+     * @var string
+     */
+    protected $table = 'subscriptions';
 }
