@@ -7,9 +7,9 @@
  */
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 
-class Sites extends Model
+class Sites extends BaseModel
 {
     /**
      * Table to use

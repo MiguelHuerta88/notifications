@@ -16,11 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'api', 'middleware' => 'api'], function(){
-    Route::post('create', function(){
-        dd('here');
-    });
+    Route::post('create','SubscriptionController@create');
 
-    Route::post('update', function(){
-        dd(request()->all());
-    });
+    Route::post('update', 'SubscriptionController@update');
 });
