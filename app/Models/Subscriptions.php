@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 
 /**
  * Created by PhpStorm.
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * Date: 5/22/18
  * Time: 1:42 PM
  */
-class Subscriptions extends Model
+class Subscriptions extends BaseModel
 {
     /**
      * Table to use
@@ -17,4 +17,35 @@ class Subscriptions extends Model
      * @var string
      */
     protected $table = 'subscriptions';
+
+    public $timestamps = false;
+
+    /**
+     * Validation rules that apply for this Model. When inserting or updating
+     *
+     * @var array
+     */
+    protected $rules = [
+        'site_id'       => 'required|integer',
+        'user_id'       => 'sometimes|required|integer',
+        'endpoint'      => 'required|string',
+        'subscription'  => 'required|json'
+    ];
+
+    /**
+     * Mass Assignment Fillable list
+     *
+     * @var array
+     */
+    protected $fillable = ['endpoint', 'subscription', 'site_id', 'user_id'];
+
+    /**
+     * Get the validation rules to use
+     *
+     * @return array
+     */
+    public function getValidationRules()
+    {
+        return $this->rules;
+    }
 }

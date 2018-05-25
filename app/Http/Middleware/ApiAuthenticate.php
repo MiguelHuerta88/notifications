@@ -41,7 +41,7 @@ class ApiAuthenticate
         }
         // check public keys
         if($site && $site->public_key != $request->get('public_key')) {
-            return response("Public key passed in does not match key we stored for this site", 500);
+            return response("Public key passed in does not match key we stored for this site: {$site->site}", 500);
         }
 
         return $next($request);
