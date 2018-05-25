@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'api', 'middleware' => 'api'], function(){
+    Route::post('create','SubscriptionController@create');
+
+    Route::post('update', 'SubscriptionController@update');
+});
